@@ -18,8 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Mini-Games.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{62CF1A30-A906-428E-BBDB-B29A4470A2BC}</ProjectGuid>
+    <ProjectGuid>{D02CA849-0E30-4F39-B2C6-C2A0A024F2BF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MiniGames</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -141,9 +144,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Mini-Games.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
