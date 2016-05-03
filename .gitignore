@@ -26,3 +26,11 @@
 *.exe
 *.out
 *.app
+*.tlog
+Mini-Games/Mini-Games/Debug/Mini-Games.log
+*.idb
+*.pdb
+*.sdf
+Mini-Games/Mini-Games.opensdf
+*.ilk
+*.suo
