@@ -1,12 +1,18 @@
 /* Lincoln Glauser */
+/* EEEE-346 */	
 
 
 
-#include <cstdio>
 #include <iostream>
+#include <iomanip>
+#include <cstdlib>
+
 using namespace std;
 
+#include "Include/ConnectFour.h"
 
-int main() {
-	cout << "Hello World" << endl;
+int main()
+{
+	ConnectFour connectFour;
+	return 0;
 }
