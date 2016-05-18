@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Game.h"
 #include <random> // contains C++11 random number generation features
 #include <ctime>
 #include <iostream>
@@ -10,10 +11,9 @@
 #include <limits>
 #include <algorithm>
 using namespace std;
-
 #include "ConnectFourBoard.h"
 
-class ConnectFour
+class ConnectFour : public Game
 {
 public:
 	ConnectFour();

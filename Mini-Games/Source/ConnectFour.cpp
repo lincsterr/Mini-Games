@@ -5,8 +5,8 @@
 ConnectFour::ConnectFour()
 	: board(6,7)
 {
-	initialize();
-	play();
+	//initialize();
+	//play();
 }
 
 ConnectFour::~ConnectFour()
@@ -16,6 +16,7 @@ ConnectFour::~ConnectFour()
 
 void ConnectFour::play()
 {
+	initialize();
 	char temp = 'y';
 	while (temp == 'y') {
 		board.clearBoard();

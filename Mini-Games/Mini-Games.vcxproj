@@ -23,6 +23,7 @@
     <ClCompile Include="Source\Board.cpp" />
     <ClCompile Include="Source\ConnectFour.cpp" />
     <ClCompile Include="Source\ConnectFourBoard.cpp" />
+    <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Token.cpp" />
   </ItemGroup>
@@ -30,6 +31,7 @@
     <ClInclude Include="Include\Board.h" />
     <ClInclude Include="Include\ConnectFour.h" />
     <ClInclude Include="Include\ConnectFourBoard.h" />
+    <ClInclude Include="Include\Game.h" />
     <ClInclude Include="Include\Player.h" />
     <ClInclude Include="Include\Token.h" />
   </ItemGroup>

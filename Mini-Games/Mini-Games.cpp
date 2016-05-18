@@ -1,6 +1,7 @@
 /* Lincoln Glauser */
 /* EEEE-346 */	
 
+#include "Include/Game.h"
 #include "Include/ConnectFour.h"
 
 void printMenu();
@@ -9,6 +10,10 @@ int main()
 {
 	int gameNumber;
 	char temp = 'y';
+	vector < Game * > games(1);
+	ConnectFour connectFour;
+	// initialize vector with Games
+	games[0] = &connectFour;
 	while (temp == 'y') {
 		printMenu();
 		cin >> gameNumber;
@@ -20,10 +25,7 @@ int main()
 		}
 		cin.ignore();
 		if (gameNumber != -1) {
-			if (gameNumber == 0) { // ConnectFour
-				/* Start Connect Four Game */
-				ConnectFour connectFour;
-			}
+			games[gameNumber]->play();
 			cout << "Would you like to go to the main menu? (y/n): " << endl;
 			cin >> temp;
 			while (cin.fail() || ((temp != 'y') && (temp != 'n'))) {
