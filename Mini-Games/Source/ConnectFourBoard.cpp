@@ -104,11 +104,11 @@ int ConnectFourBoard::checkDiagonalLtoR(int playerNumber)
 	for (size_t r = 0; r < 3; r++) {
 		for (size_t c = 0; c < 4; c++) {
 			if (iterateDiagonalLtoR(playerNumber, c, r)) {
-				return true;
+				return playerNumber;
 			}
 		}
 	}
-	return false;
+	return -1;
 }
 
 bool ConnectFourBoard::iterateDiagonalLtoR(int playerNumber, int column, int row)
@@ -130,17 +130,17 @@ int ConnectFourBoard::checkDiagonalRtoL(int playerNumber)
 	for (size_t r = 0; r < 3; r++) {
 		for (size_t c = 3; c < 7; c++) {
 			if (iterateDiagonalRtoL(playerNumber, c, r)) {
-				return true;
+				return playerNumber;
 			}
 		}
 	}
-	return false;
+	return -1;
 }
 
 bool ConnectFourBoard::iterateDiagonalRtoL(int playerNumber, int column, int row)
 {
 	int r = row;
-	for (size_t c = column; c >= column - 3; c--) {
+	for (int c = column; c >= column - 3; c--) {
 		if (tokens[r][c].getPlayerNum() == playerNumber) { 
 			r++;
 		}

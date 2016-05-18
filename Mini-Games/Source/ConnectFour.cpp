@@ -20,6 +20,7 @@ void ConnectFour::play()
 		board.clearBoard();
 		players[0].resetNumTurns();
 		players[1].resetNumTurns();
+		clearConsole();
 		for (size_t i = 0; i < 6 * 7; i++) {
 			cout << board;
 			/* Player 1 */
@@ -50,7 +51,7 @@ void ConnectFour::input(int playerNumber)
 {
 	int columnNumber;
 	cout << players[playerNumber - 1].getName() << " it is your turn! Please select a column: ";
-	cin >> columnNumber; // xyz check for integer only input from 0 - 6
+	cin >> columnNumber; 
 	clearConsole();
 	board.addToken(playerNumber, columnNumber);
 	players[playerNumber - 1].incNumTurns();
@@ -58,20 +59,20 @@ void ConnectFour::input(int playerNumber)
 
 int ConnectFour::evaluate(int playerNum)
 {
-	if (board.checkHorizontal(playerNum) > 0) {
-		return board.checkHorizontal(playerNum);
+	if (board.checkHorizontal(playerNum) == playerNum) {
+		return playerNum;
 	}
-	else if (board.checkVertical(playerNum) > 0) {
-		return board.checkVertical(playerNum);
+	else if (board.checkVertical(playerNum) == playerNum) {
+		return playerNum;
 	}
-	else if (board.checkDiagonalLtoR(playerNum) > 0) {
-		return board.checkDiagonalLtoR(playerNum);
+	else if (board.checkDiagonalLtoR(playerNum) == playerNum) {
+		return playerNum;
 	}
-	else if (board.checkDiagonalRtoL(playerNum) > 0) {
-		return board.checkDiagonalRtoL(playerNum);
+	else if (board.checkDiagonalRtoL(playerNum) == playerNum) {
+		return playerNum;
 	}
 	else {
-		return 0;
+		return -1;
 	}
 }
 
