@@ -25,7 +25,7 @@ void ConnectFour::play()
 			cout << board;
 			/* Player 1 */
 			input(1);
-			if (evaluate(1) == 1) {
+			if (evaluate(1)) {
 				cout << board;
 				cout << players[0].getName() << " has won the game in " << players[0].getNumTurns() << " turns!" << endl;
 				break;
@@ -33,7 +33,7 @@ void ConnectFour::play()
 			cout << board;
 			/* Player 2 */
 			input(2);
-			if (evaluate(2) == 2) {
+			if (evaluate(2)) {
 				cout << board;
 				cout << players[1].getName() << " has won the game in " << players[1].getNumTurns() << " turns!" << endl;
 				break;
@@ -64,22 +64,22 @@ void ConnectFour::input(int playerNumber)
 	players[playerNumber - 1].incNumTurns();
 }
 
-int ConnectFour::evaluate(int playerNum)
+bool ConnectFour::evaluate(int playerNum)
 {
-	if (board.checkHorizontal(playerNum) == playerNum) {
-		return playerNum;
+	if (board.checkHorizontal(playerNum)) {
+		return true;
 	}
-	else if (board.checkVertical(playerNum) == playerNum) {
-		return playerNum;
+	else if (board.checkVertical(playerNum)) {
+		return true;
 	}
-	else if (board.checkDiagonalLtoR(playerNum) == playerNum) {
-		return playerNum;
+	else if (board.checkDiagonalLtoR(playerNum)) {
+		return true;
 	}
-	else if (board.checkDiagonalRtoL(playerNum) == playerNum) {
-		return playerNum;
+	else if (board.checkDiagonalRtoL(playerNum)) {
+		return true;
 	}
 	else {
-		return -1;
+		return false;
 	}
 }
 

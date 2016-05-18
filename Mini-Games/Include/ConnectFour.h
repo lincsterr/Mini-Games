@@ -19,7 +19,7 @@ public:
 	~ConnectFour();
 
 	void play();
-	int evaluate(int);
+	bool evaluate(int);
 
 	void input(int);
 	void clearConsole();

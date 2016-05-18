@@ -19,11 +19,11 @@ public:
 	~ConnectFourBoard();
 
 	void addToken(int, int);
-	int checkHorizontal(int);
-	int checkVertical(int);
-	int checkDiagonalLtoR(int);
+	bool checkHorizontal(int);
+	bool checkVertical(int);
+	bool checkDiagonalLtoR(int);
 	bool iterateDiagonalLtoR(int, int, int);
-	int checkDiagonalRtoL(int);
+	bool checkDiagonalRtoL(int);
 	bool iterateDiagonalRtoL(int, int, int);
 	void initializeBoard();
 	void clearBoard();

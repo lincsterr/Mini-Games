@@ -35,7 +35,7 @@ void ConnectFourBoard::addToken(int playerNumber, int columnNumber)
 	}
 }
 
-int ConnectFourBoard::checkHorizontal(int playerNumber)
+bool ConnectFourBoard::checkHorizontal(int playerNumber)
 {
 	int count;
 	for (vector< vector<Token> >::iterator it = tokens.begin(); it != tokens.end(); ++it) {
@@ -58,16 +58,16 @@ int ConnectFourBoard::checkHorizontal(int playerNumber)
 				}
 			}
 			if (count == 4) {
-				return playerNumber;
+				return true;
 			}
 		}
 	}
 	if (count != 4) {
-		return 0;
+		return false;
 	}
 }
 
-int ConnectFourBoard::checkVertical(int playerNumber)
+bool ConnectFourBoard::checkVertical(int playerNumber)
 {
 	int count;
 	for (size_t i = 0; i < 7; i++) {
@@ -90,25 +90,25 @@ int ConnectFourBoard::checkVertical(int playerNumber)
 				}
 			}
 			if (count == 4) {
-				return playerNumber;
+				return true;
 			}
 		}
 	}
 	if (count != 4) {
-		return 0;
+		return false;
 	}
 }
 
-int ConnectFourBoard::checkDiagonalLtoR(int playerNumber)
+bool ConnectFourBoard::checkDiagonalLtoR(int playerNumber)
 {
 	for (size_t r = 0; r < 3; r++) {
 		for (size_t c = 0; c < 4; c++) {
 			if (iterateDiagonalLtoR(playerNumber, c, r)) {
-				return playerNumber;
+				return true;
 			}
 		}
 	}
-	return -1;
+	return false;
 }
 
 bool ConnectFourBoard::iterateDiagonalLtoR(int playerNumber, int column, int row)
@@ -125,16 +125,16 @@ bool ConnectFourBoard::iterateDiagonalLtoR(int playerNumber, int column, int row
 		return true;
 }
 
-int ConnectFourBoard::checkDiagonalRtoL(int playerNumber)
+bool ConnectFourBoard::checkDiagonalRtoL(int playerNumber)
 {
 	for (size_t r = 0; r < 3; r++) {
 		for (size_t c = 3; c < 7; c++) {
 			if (iterateDiagonalRtoL(playerNumber, c, r)) {
-				return playerNumber;
+				return true;
 			}
 		}
 	}
-	return -1;
+	return false;
 }
 
 bool ConnectFourBoard::iterateDiagonalRtoL(int playerNumber, int column, int row)
