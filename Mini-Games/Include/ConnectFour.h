@@ -21,6 +21,7 @@ public:
 	int evaluate(int);
 
 	void input(int);
+	void clearConsole();
 	void initialize();
 private:
 	ConnectFourBoard board;

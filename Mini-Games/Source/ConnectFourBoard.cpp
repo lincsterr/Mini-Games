@@ -116,11 +116,11 @@ bool ConnectFourBoard::iterateDiagonalLtoR(int playerNumber, int column, int row
 	int r = row;
 	for (size_t c = column; c < column + 4; c++) {
 		if (tokens[r][c].getPlayerNum() == playerNumber) {
+			r++;
 		}
 		else {
 			return false;
 		}
-		r++;
 	}
 		return true;
 }
@@ -142,11 +142,11 @@ bool ConnectFourBoard::iterateDiagonalRtoL(int playerNumber, int column, int row
 	int r = row;
 	for (size_t c = column; c >= column - 3; c--) {
 		if (tokens[r][c].getPlayerNum() == playerNumber) { 
+			r++;
 		}
 		else {
 			return false;
 		}
-		r++;
 	}
 		return true;
 }

@@ -51,6 +51,7 @@ void ConnectFour::input(int playerNumber)
 	int columnNumber;
 	cout << players[playerNumber - 1].getName() << " it is your turn! Please select a column: ";
 	cin >> columnNumber; // xyz check for integer only input from 0 - 6
+	clearConsole();
 	board.addToken(playerNumber, columnNumber);
 	players[playerNumber - 1].incNumTurns();
 }
@@ -72,6 +73,11 @@ int ConnectFour::evaluate(int playerNum)
 	else {
 		return 0;
 	}
+}
+
+void ConnectFour::clearConsole()
+{
+	cout << "\033[2J\033[1;1H";
 }
 
 void ConnectFour::initialize()
