@@ -44,6 +44,12 @@ void ConnectFour::play()
 		}
 		cout << "Would you like to play again? (y/n): " << endl;
 		cin >> temp;
+		while (cin.fail() || ((temp != 'y') && (temp != 'n'))) {
+			cout << "\nIncorrect input, please try again (y/n): ";
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cin >> temp;
+		}
 	}
 }
 
@@ -61,7 +67,6 @@ void ConnectFour::input(int playerNumber)
 			else {
 				cout << "\nColumn filled, please try again: ";
 			}
-			
 		}
 		else {
 			cout << "\nIncorrect input, please try again (0-6): ";
