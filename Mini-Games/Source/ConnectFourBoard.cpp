@@ -151,6 +151,15 @@ bool ConnectFourBoard::iterateDiagonalRtoL(int playerNumber, int column, int row
 		return true;
 }
 
+bool ConnectFourBoard::columnFilled(int column)
+{
+	if (tokens[5][column].getPlayerNum() > 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
 
 // function operator << definition
 ostream  &operator<<(ostream &output, ConnectFourBoard const &c)

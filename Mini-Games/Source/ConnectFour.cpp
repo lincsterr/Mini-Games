@@ -53,8 +53,19 @@ void ConnectFour::input(int playerNumber)
 	bool DONE = 0;
 	cout << players[playerNumber - 1].getName() << " it is your turn! Please select a column: ";
 	cin >> columnNumber;
-	while (cin.fail() || (columnNumber < 0) || (columnNumber > 6)) {
-		cout << "\nIncorrect input, please try again (0-6): ";
+	while (cin.fail() || (columnNumber < 0) || (columnNumber > 6) || (board.columnFilled(columnNumber))) {
+		if (!cin.fail()) {
+			if ((columnNumber < 0) || (columnNumber > 6)) {
+				cout << "\nIncorrect input, please try again (0-6): ";
+			}
+			else {
+				cout << "\nColumn filled, please try again: ";
+			}
+			
+		}
+		else {
+			cout << "\nIncorrect input, please try again (0-6): ";
+		}
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		cin >> columnNumber;
