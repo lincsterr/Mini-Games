@@ -11,6 +11,7 @@ ConnectFour::ConnectFour()
 
 ConnectFour::~ConnectFour()
 {
+	clearConsole();
 }
 
 void ConnectFour::play()
@@ -107,6 +108,37 @@ void ConnectFour::clearConsole()
 void ConnectFour::initialize()
 {
 	string name;
+	clearConsole();
+	/* Print Title */
+	const int width = 30;
+	string line = "C O N N E C T  F O U R";
+	cout << char(218);
+	for (size_t j = 0; j < width; j++) {
+		cout << char(196);
+	}
+	cout << char(191) << endl;
+	cout << char(179);
+	for (int i = 0; i < (width - line.length()) / 2; i++) {
+		cout << ' ';
+	}
+	cout << line;
+	if (line.length() % 2 == 0) {
+		for (int i = 0; i < (width - line.length()) / 2; i++) {
+			cout << ' ';
+		}
+	}
+	else {
+		for (int i = 0; i < (width - line.length()) / 2; i++) {
+			cout << ' ';
+		}
+	}
+	cout << char(179) << endl;
+	cout << char(192);
+	for (size_t j = 0; j < width; j++) {
+		cout << char(196);
+	}
+	cout << char(217) << endl;
+	/* Input Names */
 	cout << "Player 1 please input your name: ";
 	getline(cin,name);
 	players.push_back(Player(1, name));

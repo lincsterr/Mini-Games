@@ -164,6 +164,37 @@ bool ConnectFourBoard::columnFilled(int column)
 // function operator << definition
 ostream  &operator<<(ostream &output, ConnectFourBoard const &c)
 {
+	/* Print Game Title */
+	const int width = 27;
+	string line = "C O N N E C T  F O U R";
+	output << ' ' << char(218);
+	for (size_t j = 0; j < width; j++) {
+		output << char(196);
+	}
+	output << char(191) << endl;
+	output << ' ' << char(179);
+	for (int i = 0; i < (width - line.length()) / 2; i++) {
+		output << ' ';
+	}
+	output << line;
+	if (line.length() % 2 == 0) {
+		for (int i = 0; i <= (width - line.length()) / 2; i++) {
+			output << ' ';
+		}
+	}
+	else {
+		for (int i = 0; i < (width - line.length()) / 2; i++) {
+			output << ' ';
+		}
+	}
+	output << char(179) << endl;
+	output << ' ' << char(192);
+	for (size_t j = 0; j < width; j++) {
+		output << char(196);
+	}
+	output << char(217) << endl;
+
+	/* Print Board */
 	for (int a = 0; a < c.num_cols; a++) {
 		output << "   " << a;
 	}
