@@ -52,17 +52,12 @@ void ConnectFour::input(int playerNumber)
 	int columnNumber;
 	bool DONE = 0;
 	cout << players[playerNumber - 1].getName() << " it is your turn! Please select a column: ";
-	while (!DONE) {
-		char temp;
-		cin >> temp;
-		if (isdigit(temp)) {
-			DONE = 1;
-			cin.putback(temp);
-			cin >> columnNumber;
-		}
-		else {
-			cout << "\nIncorrect input, please try again (0-6): ";
-		}
+	cin >> columnNumber;
+	while (cin.fail() || (columnNumber < 0) || (columnNumber > 6)) {
+		cout << "\nIncorrect input, please try again (0-6): ";
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> columnNumber;
 	}
 	clearConsole();
 	board.addToken(playerNumber, columnNumber);
