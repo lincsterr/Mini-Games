@@ -50,8 +50,20 @@ void ConnectFour::play()
 void ConnectFour::input(int playerNumber)
 {
 	int columnNumber;
+	bool DONE = 0;
 	cout << players[playerNumber - 1].getName() << " it is your turn! Please select a column: ";
-	cin >> columnNumber; 
+	while (!DONE) {
+		char temp;
+		cin >> temp;
+		if (isdigit(temp)) {
+			DONE = 1;
+			cin.putback(temp);
+			cin >> columnNumber;
+		}
+		else {
+			cout << "\nIncorrect input, please try again (0-6): ";
+		}
+	}
 	clearConsole();
 	board.addToken(playerNumber, columnNumber);
 	players[playerNumber - 1].incNumTurns();
