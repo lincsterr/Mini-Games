@@ -2,13 +2,13 @@
 
 
 ConnectFourBoard::ConnectFourBoard()
-	: num_rows(1), num_cols(1)
+	: Board(1,1)
 {
 	initializeBoard();
 }
 
 ConnectFourBoard::ConnectFourBoard(int r, int c)
-	: num_rows(r), num_cols(c)
+	: Board(r,c)
 {
 	initializeBoard();
 }

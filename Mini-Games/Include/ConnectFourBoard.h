@@ -29,8 +29,8 @@ public:
 	void initializeBoard();
 	void clearBoard();
 private:
-	int num_rows = 1;
-	int num_cols = 1;
+	//int num_rows = 1;
+	//int num_cols = 1;
 	vector <vector <Token> > tokens;
 };
 
