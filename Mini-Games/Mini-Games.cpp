@@ -3,6 +3,7 @@
 
 #include "Include/Game.h"
 #include "Include/ConnectFour.h"
+#include "Include/HighScores.h"
 
 void printMenu();
 
@@ -26,14 +27,6 @@ int main()
 		cin.ignore();
 		if (gameNumber != -1) {
 			games[gameNumber]->play();
-			cout << "Would you like to go to the main menu? (y/n): " << endl;
-			cin >> temp;
-			while (cin.fail() || ((temp != 'y') && (temp != 'n'))) {
-				cout << "\nIncorrect input, please try again (y/n): ";
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cin >> temp;
-			}
 		}
 		else {
 			break;

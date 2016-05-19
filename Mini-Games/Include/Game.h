@@ -1,4 +1,5 @@
 #pragma once
+#include "HighScores.h"
 class Game
 {
 public:
@@ -6,5 +7,7 @@ public:
 	virtual ~Game();
 
 	virtual void play();
+protected: 
+	HighScores highscores;
 };
 

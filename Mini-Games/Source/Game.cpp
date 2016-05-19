@@ -4,6 +4,7 @@
 using namespace std;
 
 Game::Game()
+	:highscores("highscores.dat")
 {
 }
 

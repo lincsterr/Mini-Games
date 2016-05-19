@@ -12,7 +12,7 @@
 #include <algorithm>
 using namespace std;
 #include "ConnectFourBoard.h"
-
+#include "HighScores.h"
 class ConnectFour : public Game
 {
 public:
