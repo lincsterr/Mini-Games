@@ -21,7 +21,7 @@ void ConnectFour::play()
 		players[0].resetNumTurns();
 		players[1].resetNumTurns();
 		clearConsole();
-		for (size_t i = 0; i < 6 * 7; i++) {
+		for (size_t i = 0; i < (6 * 7)/2; i++) {
 			cout << board;
 			/* Player 1 */
 			input(1);
@@ -40,8 +40,9 @@ void ConnectFour::play()
 				highscores.input(players[1].getName(), 0, players[1].getNumTurns());
 				break;
 			}
-			if (i == 41) {
+			if (i == ((6*7)/2 - 1)) {
 				cout << "Tie! Nobody won!" << endl;
+				break;
 			}
 		}
 		cout << "Would you like to play again? (y/n): " << endl;
@@ -61,24 +62,24 @@ void ConnectFour::input(int playerNumber)
 	bool DONE = 0;
 	cout << players[playerNumber - 1].getName() << " it is your turn! Please select a column: ";
 	cin >> columnNumber;
-	while (cin.fail() || (columnNumber < 0) || (columnNumber > 6) || (board.columnFilled(columnNumber))) {
+	while (cin.fail() || (columnNumber < 1) || (columnNumber > 7) || (board.columnFilled(columnNumber-1))) {
 		if (!cin.fail()) {
-			if ((columnNumber < 0) || (columnNumber > 6)) {
-				cout << "\nIncorrect input, please try again (0-6): ";
+			if ((columnNumber < 1) || (columnNumber > 7)) {
+				cout << "\nIncorrect input, please try again (1-7): ";
 			}
 			else {
 				cout << "\nColumn filled, please try again: ";
 			}
 		}
 		else {
-			cout << "\nIncorrect input, please try again (0-6): ";
+			cout << "\nIncorrect input, please try again (1-7): ";
 		}
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		cin >> columnNumber;
 	}
 	clearConsole();
-	board.addToken(playerNumber, columnNumber);
+	board.addToken(playerNumber, columnNumber-1);
 	players[playerNumber - 1].incNumTurns();
 }
 

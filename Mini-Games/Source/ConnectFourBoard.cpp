@@ -196,7 +196,7 @@ ostream  &operator<<(ostream &output, ConnectFourBoard const &c)
 
 	/* Print Board */
 	for (int a = 0; a < c.num_cols; a++) {
-		output << "   " << a;
+		output << "   " << a+1;
 	}
 	output << endl;
 	for (int a = c.num_rows-1; a >= 0; a--)

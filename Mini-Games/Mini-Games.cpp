@@ -18,15 +18,15 @@ int main()
 	while (temp == 'y') {
 		printMenu();
 		cin >> gameNumber;
-		while (cin.fail() || ((gameNumber != 0) && (gameNumber != -1))) {
+		while (cin.fail() || ((gameNumber != 0) && (gameNumber != 1))) {
 			cout << "\nIncorrect input, please try again: ";
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			cin >> gameNumber;
 		}
 		cin.ignore();
-		if (gameNumber != -1) {
-			games[gameNumber]->play();
+		if (gameNumber != 0) {
+			games[gameNumber-1]->play();
 		}
 		else {
 			break;
@@ -49,8 +49,8 @@ int main()
 		strings.push_back("");
 		strings.push_back("Game Choices:");
 		strings.push_back("");
-		strings.push_back("Connect Four: Select 0");
-		strings.push_back("Exit: Select -1");
+		strings.push_back("Connect Four: Select 1");
+		strings.push_back("Exit: Select 0");
 		/* Create Menu */
 		cout << char(218);
 		for (size_t j = 0; j < width; j++) {
