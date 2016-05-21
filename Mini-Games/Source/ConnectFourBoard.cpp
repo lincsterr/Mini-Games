@@ -1,3 +1,5 @@
+/* Lincoln Glauser 5/19/16 */
+/* EEEE-346 */
 #include "../Include/ConnectFourBoard.h"
 
 
@@ -24,7 +26,7 @@ void ConnectFourBoard::addToken(int playerNumber, int columnNumber)
 		if (it->at(columnNumber).getPlayerNum() == 0) {
 			if (playerNumber == 1) {
 				it->at(columnNumber).setPlayerNum(1);
-				it->at(columnNumber).setColor(char(176));
+				it->at(columnNumber).setColor(char(177));
 			}
 			else if (playerNumber == 2) {
 				it->at(columnNumber).setPlayerNum(2);

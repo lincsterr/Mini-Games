@@ -1,4 +1,4 @@
-/* Lincoln Glauser */
+/* Lincoln Glauser 5/19/16 */
 /* EEEE-346 */	
 
 #include "Include/Game.h"
@@ -50,6 +50,7 @@ int main()
 		strings.push_back("Game Choices:");
 		strings.push_back("");
 		strings.push_back("Connect Four: Select 1");
+		strings.push_back("");
 		strings.push_back("Exit: Select 0");
 		/* Create Menu */
 		cout << char(218);

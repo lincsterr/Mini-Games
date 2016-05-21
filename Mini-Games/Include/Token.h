@@ -1,3 +1,5 @@
+/* Lincoln Glauser 5/19/16 */
+/* EEEE-346 */
 #pragma once // xyz if defines
 #include <string>
 #include <iostream>
