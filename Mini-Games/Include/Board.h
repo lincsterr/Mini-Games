@@ -16,6 +16,10 @@ public:
 	void clearBoard();
 	bool checkHorizontal(int);
 	bool checkVertical(int);
+	bool checkDiagonalLtoR(int);
+	bool iterateDiagonalLtoR(int, int, int);
+	bool checkDiagonalRtoL(int);
+	bool iterateDiagonalRtoL(int, int, int);
 	virtual ~Board();
 
 protected: 

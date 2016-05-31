@@ -30,58 +30,6 @@ void ConnectFourBoard::addToken(int playerNumber, int columnNumber)
 	}
 }
 
-bool ConnectFourBoard::checkDiagonalLtoR(int playerNumber)
-{
-	for (size_t r = 0; r < 3; r++) {
-		for (size_t c = 0; c < 4; c++) {
-			if (iterateDiagonalLtoR(playerNumber, c, r)) {
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-bool ConnectFourBoard::iterateDiagonalLtoR(int playerNumber, int column, int row)
-{
-	int r = row;
-	for (size_t c = column; c < column + 4; c++) {
-		if (tokens[r][c].getPlayerNum() == playerNumber) {
-			r++;
-		}
-		else {
-			return false;
-		}
-	}
-		return true;
-}
-
-bool ConnectFourBoard::checkDiagonalRtoL(int playerNumber)
-{
-	for (size_t r = 0; r < 3; r++) {
-		for (size_t c = 3; c < 7; c++) {
-			if (iterateDiagonalRtoL(playerNumber, c, r)) {
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-bool ConnectFourBoard::iterateDiagonalRtoL(int playerNumber, int column, int row)
-{
-	int r = row;
-	for (int c = column; c >= column - 3; c--) {
-		if (tokens[r][c].getPlayerNum() == playerNumber) { 
-			r++;
-		}
-		else {
-			return false;
-		}
-	}
-		return true;
-}
-
 bool ConnectFourBoard::columnFilled(int column)
 {
 	if (tokens[5][column].getPlayerNum() > 0) {

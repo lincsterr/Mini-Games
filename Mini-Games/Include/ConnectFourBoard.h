@@ -20,10 +20,6 @@ public:
 	~ConnectFourBoard();
 
 	void addToken(int, int);
-	bool checkDiagonalLtoR(int);
-	bool iterateDiagonalLtoR(int, int, int);
-	bool checkDiagonalRtoL(int);
-	bool iterateDiagonalRtoL(int, int, int);
 	bool columnFilled(int);
 };
 

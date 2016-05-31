@@ -92,6 +92,58 @@ bool Board::checkVertical(int playerNumber)
 	}
 }
 
+bool Board::checkDiagonalLtoR(int playerNumber)
+{
+	for (size_t r = 0; r < num_rows - numToWin + 1; r++) {
+		for (size_t c = 0; c < num_cols - numToWin + 1; c++) {
+			if (iterateDiagonalLtoR(playerNumber, c, r)) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool Board::iterateDiagonalLtoR(int playerNumber, int column, int row)
+{
+	int r = row;
+	for (size_t c = column; c < column + numToWin; c++) {
+		if (tokens[r][c].getPlayerNum() == playerNumber) {
+			r++;
+		}
+		else {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool Board::checkDiagonalRtoL(int playerNumber)
+{
+	for (size_t r = 0; r < num_rows - numToWin + 1; r++) {
+		for (size_t c = num_cols - 1; c >= numToWin - 1; c--) {
+			if (iterateDiagonalRtoL(playerNumber, c, r)) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool Board::iterateDiagonalRtoL(int playerNumber, int column, int row)
+{
+	int r = row;
+	for (int c = column; c >= column - numToWin + 1; c--) {
+		if (tokens[r][c].getPlayerNum() == playerNumber) {
+			r++;
+		}
+		else {
+			return false;
+		}
+	}
+	return true;
+}
+
 Board::~Board()
 {
 }
