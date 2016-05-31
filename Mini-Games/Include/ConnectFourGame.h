@@ -15,11 +15,11 @@
 using namespace std;
 #include "ConnectFourBoard.h"
 #include "HighScores.h"
-class ConnectFour : public Game
+class ConnectFourGame : public Game
 {
 public:
-	ConnectFour();
-	~ConnectFour();
+	ConnectFourGame();
+	~ConnectFourGame();
 
 	void play();
 	bool evaluate(int);

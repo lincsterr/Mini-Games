@@ -1,20 +1,20 @@
 /* Lincoln Glauser 5/19/16 */
 /* EEEE-346 */	
-#include "../Include/ConnectFour.h"
+#include "../Include/ConnectFourGame.h"
 #include "../Include/Player.h"
 
 
-ConnectFour::ConnectFour()
+ConnectFourGame::ConnectFourGame()
 	: board(6,7), Game()
 {
 }
 
-ConnectFour::~ConnectFour()
+ConnectFourGame::~ConnectFourGame()
 {
 	clearConsole();
 }
 
-void ConnectFour::play()
+void ConnectFourGame::play()
 {
 	initialize();
 	char temp = 'y';
@@ -58,7 +58,7 @@ void ConnectFour::play()
 	}
 }
 
-void ConnectFour::input(int playerNumber)
+void ConnectFourGame::input(int playerNumber)
 {
 	int columnNumber;
 	bool DONE = 0;
@@ -85,7 +85,7 @@ void ConnectFour::input(int playerNumber)
 	players[playerNumber - 1].incNumTurns();
 }
 
-bool ConnectFour::evaluate(int playerNum)
+bool ConnectFourGame::evaluate(int playerNum)
 {
 	if (board.checkHorizontal(playerNum)) {
 		return true;
@@ -104,12 +104,12 @@ bool ConnectFour::evaluate(int playerNum)
 	}
 }
 
-void ConnectFour::clearConsole()
+void ConnectFourGame::clearConsole()
 {
 	cout << "\033[2J\033[1;1H";
 }
 
-void ConnectFour::initialize()
+void ConnectFourGame::initialize()
 {
 	string name;
 	clearConsole();

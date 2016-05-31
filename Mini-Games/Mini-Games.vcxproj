@@ -21,7 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Mini-Games.cpp" />
     <ClCompile Include="Source\Board.cpp" />
-    <ClCompile Include="Source\ConnectFour.cpp" />
+    <ClCompile Include="Source\ConnectFourGame.cpp" />
     <ClCompile Include="Source\ConnectFourBoard.cpp" />
     <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\HighScores.cpp" />
@@ -30,7 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Board.h" />
-    <ClInclude Include="Include\ConnectFour.h" />
+    <ClInclude Include="Include\ConnectFourGame.h" />
     <ClInclude Include="Include\ConnectFourBoard.h" />
     <ClInclude Include="Include\Game.h" />
     <ClInclude Include="Include\HighScores.h" />

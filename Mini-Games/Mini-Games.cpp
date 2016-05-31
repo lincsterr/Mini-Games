@@ -1,9 +1,7 @@
 /* Lincoln Glauser 5/19/16 */
 /* EEEE-346 */	
 
-#include "Include/Game.h"
-#include "Include/ConnectFour.h"
-#include "Include/HighScores.h"
+#include "Include/ConnectFourGame.h"
 
 void printMenu();
 
@@ -12,9 +10,9 @@ int main()
 	int gameNumber;
 	char temp = 'y';
 	vector < Game * > games(1);
-	ConnectFour connectFour;
+	ConnectFourGame connectFourGame;
 	// initialize vector with Games
-	games[0] = &connectFour;
+	games[0] = &connectFourGame;
 	while (temp == 'y') {
 		printMenu();
 		cin >> gameNumber;
