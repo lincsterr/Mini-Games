@@ -26,6 +26,8 @@
     <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\HighScores.cpp" />
     <ClCompile Include="Source\Player.cpp" />
+    <ClCompile Include="Source\TicTacToeBoard.cpp" />
+    <ClCompile Include="Source\TicTacToeGame.cpp" />
     <ClCompile Include="Source\Token.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +37,8 @@
     <ClInclude Include="Include\Game.h" />
     <ClInclude Include="Include\HighScores.h" />
     <ClInclude Include="Include\Player.h" />
+    <ClInclude Include="Include\TicTacToeBoard.h" />
+    <ClInclude Include="Include\TicTacToeGame.h" />
     <ClInclude Include="Include\Token.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

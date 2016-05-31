@@ -2,6 +2,7 @@
 /* EEEE-346 */	
 
 #include "Include/ConnectFourGame.h"
+#include "Include/TicTacToeGame.h"
 
 void printMenu();
 
@@ -9,14 +10,16 @@ int main()
 {
 	int gameNumber;
 	char temp = 'y';
-	vector < Game * > games(1);
+	vector < Game * > games(2);
 	ConnectFourGame connectFourGame;
+	TicTacToeGame ticTacToeGame;
 	// initialize vector with Games
 	games[0] = &connectFourGame;
+	games[1] = &ticTacToeGame;
 	while (temp == 'y') {
 		printMenu();
 		cin >> gameNumber;
-		while (cin.fail() || ((gameNumber != 0) && (gameNumber != 1))) {
+		while (cin.fail() || ((gameNumber < 0) && (gameNumber > 2))) {
 			cout << "\nIncorrect input, please try again: ";
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -48,6 +51,8 @@ int main()
 		strings.push_back("Game Choices:");
 		strings.push_back("");
 		strings.push_back("Connect Four: Select 1");
+		strings.push_back("");
+		strings.push_back("Tic-Tac-Toe: Select 2");
 		strings.push_back("");
 		strings.push_back("Exit: Select 0");
 		/* Create Menu */

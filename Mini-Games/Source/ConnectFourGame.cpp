@@ -61,7 +61,6 @@ void ConnectFourGame::play()
 void ConnectFourGame::input(int playerNumber)
 {
 	int columnNumber;
-	bool DONE = 0;
 	cout << players[playerNumber - 1].getName() << " it is your turn! Please select a column: ";
 	cin >> columnNumber;
 	while (cin.fail() || (columnNumber < 1) || (columnNumber > 7) || (board.columnFilled(columnNumber-1))) {
