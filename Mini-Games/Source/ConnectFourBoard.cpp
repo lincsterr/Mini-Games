@@ -2,15 +2,8 @@
 /* EEEE-346 */
 #include "../Include/ConnectFourBoard.h"
 
-
-ConnectFourBoard::ConnectFourBoard()
-	: Board(1,1)
-{
-	initializeBoard();
-}
-
-ConnectFourBoard::ConnectFourBoard(int r, int c)
-	: Board(r,c)
+ConnectFourBoard::ConnectFourBoard(int r, int c, int n)
+	: Board(r,c,n)
 {
 	initializeBoard();
 }
@@ -34,70 +27,6 @@ void ConnectFourBoard::addToken(int playerNumber, int columnNumber)
 			}
 			break;
 		}
-	}
-}
-
-bool ConnectFourBoard::checkHorizontal(int playerNumber)
-{
-	int count;
-	for (vector< vector<Token> >::iterator it = tokens.begin(); it != tokens.end(); ++it) {
-		count = 0;
-		for (size_t i = 0; i < 7; i++) {
-			if (playerNumber == 1) {
-				if (it->at(i).getPlayerNum() == 1) {
-					count++;
-				}
-				else {
-					count = 0;
-				}
-			}
-			else if (playerNumber == 2) {
-				if (it->at(i).getPlayerNum() == 2) {
-					count++;
-				}
-				else {
-					count = 0;
-				}
-			}
-			if (count == 4) {
-				return true;
-			}
-		}
-	}
-	if (count != 4) {
-		return false;
-	}
-}
-
-bool ConnectFourBoard::checkVertical(int playerNumber)
-{
-	int count;
-	for (size_t i = 0; i < 7; i++) {
-		count = 0;
-		for (vector< vector<Token> >::iterator it = tokens.begin(); it != tokens.end(); ++it) {
-			if (playerNumber == 1) {
-				if (it->at(i).getPlayerNum() == 1) {
-					count++;
-				}
-				else {
-					count = 0;
-				}
-			}
-			else if (playerNumber == 2) {
-				if (it->at(i).getPlayerNum() == 2) {
-					count++;
-				}
-				else {
-					count = 0;
-				}
-			}
-			if (count == 4) {
-				return true;
-			}
-		}
-	}
-	if (count != 4) {
-		return false;
 	}
 }
 
@@ -237,22 +166,3 @@ ostream  &operator<<(ostream &output, ConnectFourBoard const &c)
 
 	return output;
 } // end function operator<<
-
-void ConnectFourBoard::initializeBoard()
-{
-	tokens.resize(num_rows);
-	for (size_t i = 0; i < num_rows; i++)
-	{
-			tokens[i].resize(num_cols);
-	} // end for
-}
-
-void ConnectFourBoard::clearBoard()
-{
-	for (size_t i = 0; i < num_rows; i++)
-	{
-		tokens[i].resize(0);
-	} // end for
-	tokens.resize(0);
-	initializeBoard();
-}

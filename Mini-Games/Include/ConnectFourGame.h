@@ -22,13 +22,11 @@ public:
 	~ConnectFourGame();
 
 	void play();
-	bool evaluate(int);
 
 	void input(int);
-	void clearConsole();
+	bool evaluate(int);
 	void initialize();
 private:
 	ConnectFourBoard board;
-	vector <Player> players;
 };
 

@@ -5,7 +5,7 @@
 
 
 ConnectFourGame::ConnectFourGame()
-	: board(6,7), Game()
+	:board(6,7,4), Game()
 {
 }
 
@@ -102,11 +102,6 @@ bool ConnectFourGame::evaluate(int playerNum)
 	else {
 		return false;
 	}
-}
-
-void ConnectFourGame::clearConsole()
-{
-	cout << "\033[2J\033[1;1H";
 }
 
 void ConnectFourGame::initialize()
