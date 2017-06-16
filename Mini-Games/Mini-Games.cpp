@@ -43,7 +43,8 @@ int main()
 		const int height = 0;
 		vector <string> strings;
 		/* Clear Console */
-		cout << "\033[2J\033[1;1H";
+		// cout << "\033[2J\033[1;1H";
+		system("cls");
 		/* All Strings to be printed in Menu */
 		strings.push_back("Welcome to Mini-Games Land");
 		strings.push_back("Main Menu");

@@ -17,7 +17,8 @@ Game::~Game()
 
 void Game::clearConsole()
 {
-	cout << "\033[2J\033[1;1H";
+	// cout << "\033[2J\033[1;1H";
+	system("cls");
 }
 
 void Game::play()
