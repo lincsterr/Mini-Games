@@ -29,6 +29,8 @@
     <ClCompile Include="Source\TicTacToeBoard.cpp" />
     <ClCompile Include="Source\TicTacToeGame.cpp" />
     <ClCompile Include="Source\Token.cpp" />
+    <ClCompile Include="Source\UltimateBoard.cpp" />
+    <ClCompile Include="Source\UltimateGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Board.h" />
@@ -40,6 +42,8 @@
     <ClInclude Include="Include\TicTacToeBoard.h" />
     <ClInclude Include="Include\TicTacToeGame.h" />
     <ClInclude Include="Include\Token.h" />
+    <ClInclude Include="Include\UltimateBoard.h" />
+    <ClInclude Include="Include\UltimateGame.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D02CA849-0E30-4F39-B2C6-C2A0A024F2BF}</ProjectGuid>

@@ -6,15 +6,15 @@
 #include <iostream>
 #include <cstdio>
 #include <vector>
-class TicTacToeBoard :
+class UltimateBoard :
 	public Board
 {
 public:
-	friend ostream &operator<<(ostream &, TicTacToeBoard const &);
+	friend ostream &operator<<(ostream &, UltimateBoard const &);
 
-	TicTacToeBoard(int,int,int);
-	~TicTacToeBoard();
+	UltimateBoard(int, int, int);
+	~UltimateBoard();
+
 	bool addToken(int, int, int);
-	//bool spotFilled(int);
 };
 

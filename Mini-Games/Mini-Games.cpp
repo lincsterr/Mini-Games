@@ -3,6 +3,7 @@
 
 #include "Include/ConnectFourGame.h"
 #include "Include/TicTacToeGame.h"
+#include "Include/UltimateGame.h"
 
 void printMenu();
 
@@ -10,16 +11,18 @@ int main()
 {
 	int gameNumber;
 	char temp = 'y';
-	vector < Game * > games(2);
+	vector < Game * > games(3);
 	ConnectFourGame connectFourGame;
 	TicTacToeGame ticTacToeGame;
+	UltimateGame ultimateGame;
 	// initialize vector with Games
 	games[0] = &connectFourGame;
 	games[1] = &ticTacToeGame;
+	games[2] = &ultimateGame;
 	while (temp == 'y') {
 		printMenu();
 		cin >> gameNumber;
-		while (cin.fail() || ((gameNumber < 0) && (gameNumber > 2))) {
+		while (cin.fail() || ((gameNumber < 0) && (gameNumber > 3))) {
 			cout << "\nIncorrect input, please try again: ";
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -54,6 +57,9 @@ int main()
 		strings.push_back("Connect Four: Select 1");
 		strings.push_back("");
 		strings.push_back("Tic-Tac-Toe: Select 2");
+		strings.push_back("");
+		strings.push_back("Ultimate Tic-Tac-Toe: Select 3");
+		strings.push_back("[Coming Soon]");
 		strings.push_back("");
 		strings.push_back("Exit: Select 0");
 		/* Create Menu */

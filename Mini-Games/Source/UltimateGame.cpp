@@ -1,12 +1,13 @@
-#include "..\Include\TicTacToeGame.h"
+#include "../Include/UltimateGame.h"
 
 
-TicTacToeGame::TicTacToeGame()
+
+UltimateGame::UltimateGame()
 	:board(3, 3, 3), Game()
 {
 }
 
-void TicTacToeGame::play()
+void UltimateGame::play()
 {
 	initialize();
 	char temp = 'y';
@@ -50,7 +51,7 @@ void TicTacToeGame::play()
 	}
 }
 
-bool TicTacToeGame::evaluate(int playerNum)
+bool UltimateGame::evaluate(int playerNum)
 {
 	if (board.checkHorizontal(playerNum)) {
 		return true;
@@ -69,7 +70,7 @@ bool TicTacToeGame::evaluate(int playerNum)
 	}
 }
 
-void TicTacToeGame::input(int playerNumber)
+void UltimateGame::input(int playerNumber)
 {
 	int columnNumber;
 	int rowNumber;
@@ -97,7 +98,7 @@ void TicTacToeGame::input(int playerNumber)
 	players[playerNumber - 1].incNumTurns();
 }
 
-void TicTacToeGame::initialize()
+void UltimateGame::initialize()
 {
 	string name;
 	clearConsole();
@@ -162,7 +163,7 @@ void TicTacToeGame::initialize()
 	players.push_back(Player(2, name));
 }
 
-TicTacToeGame::~TicTacToeGame()
+UltimateGame::~UltimateGame()
 {
 	clearConsole();
 }

@@ -1,5 +1,6 @@
 #pragma once
-#include "TicTacToeBoard.h"
+#include "UltimateBoard.h"
+#include "TicTacToeGame.h"
 #include "Game.h"
 #include <random> // contains C++11 random number generation features
 #include <ctime>
@@ -11,17 +12,19 @@
 #include <limits>
 #include <algorithm>
 #include "HighScores.h"
-class TicTacToeGame :
+
+class UltimateGame :
 	public Game
 {
 public:
-	TicTacToeGame();
-	~TicTacToeGame();
+	UltimateGame();
+	~UltimateGame();
 	void play();
 	void input(int);
 	bool evaluate(int);
 	void initialize();
-private: 
-	TicTacToeBoard board;
+private:
+	UltimateBoard board;
+	vector <vector <TicTacToeGame> > TicTacToeGames;
 };
 
