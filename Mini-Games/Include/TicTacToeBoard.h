@@ -12,7 +12,9 @@ class TicTacToeBoard :
 public:
 	friend ostream &operator<<(ostream &, TicTacToeBoard const &);
 
-	TicTacToeBoard(int,int,int);
+	TicTacToeBoard();
+	//TicTacToeBoard(const TicTacToeBoard&) = default;
+	//TicTacToeBoard& operator=(const TicTacToeBoard&) = default;
 	~TicTacToeBoard();
 	bool addToken(int, int, int);
 	//bool spotFilled(int);

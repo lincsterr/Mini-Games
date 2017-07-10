@@ -1,9 +1,7 @@
 #include "..\Include\TicTacToeBoard.h"
 
-
-
-TicTacToeBoard::TicTacToeBoard(int r, int c, int n)
-	: Board(r, c, n)
+TicTacToeBoard::TicTacToeBoard()
+	:Board(3, 3, 3)
 {
 	initializeBoard();
 }

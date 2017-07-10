@@ -16,12 +16,15 @@ class TicTacToeGame :
 {
 public:
 	TicTacToeGame();
+	TicTacToeGame(const TicTacToeGame&);
+	//TicTacToeGame(const TicTacToeGame&) = default;
+	//TicTacToeGame& operator=(const TicTacToeGame&) = default;
 	~TicTacToeGame();
 	void play();
 	void input(int);
 	bool evaluate(int);
 	void initialize();
-private: 
+//private: 
 	TicTacToeBoard board;
 };
 

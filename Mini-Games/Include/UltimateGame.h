@@ -18,13 +18,18 @@ class UltimateGame :
 {
 public:
 	UltimateGame();
+	//UltimateGame(const UltimateGame&) = default;
+	//UltimateGame& operator=(const UltimateGame&) = default;
 	~UltimateGame();
+
+	//void initializeGame();
+	//void clearGame();
 	void play();
 	void input(int);
 	bool evaluate(int);
 	void initialize();
 private:
 	UltimateBoard board;
-	vector <vector <TicTacToeGame> > TicTacToeGames;
+	/*vector <vector <TicTacToeGame> > TicTacToeGames;*/
 };
 

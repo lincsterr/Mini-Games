@@ -6,6 +6,26 @@ UltimateBoard::UltimateBoard(int r, int c, int n)
 	: Board(r, c, n)
 {
 	initializeBoard();
+	initializeGame();
+}
+
+void UltimateBoard::initializeGame()
+{
+	TicTacToeGames.resize(3);
+	for (size_t i = 0; i < 3; i++)
+	{
+		TicTacToeGames[i].resize(3);
+	} // end for
+}
+
+void UltimateBoard::clearGame()
+{
+	for (size_t i = 0; i < 3; i++)
+	{
+		TicTacToeGames[i].resize(0);
+	} // end for
+	TicTacToeGames.resize(0);
+	initializeGame();
 }
 
 bool UltimateBoard::addToken(int playerNumber, int rowNumber, int columnNumber)
@@ -192,7 +212,8 @@ ostream  &operator<<(ostream &output, UltimateBoard const &c)
 					}
 					output << a + 1 << " " << char(179);
 				}
-				output << " " << c.tokens[a][b] << " " << char(179);
+				output << " " << c.TicTacToeGames[v-1][0].board.tokens[a][b] << " " << char(179);
+				//output << " " << c.tokens[a][b] << " " << char(179);
 			}
 
 			// Mid
@@ -200,7 +221,8 @@ ostream  &operator<<(ostream &output, UltimateBoard const &c)
 				if (b == 0) {
 					output << " " << char(179);
 				}
-				output << " " << c.tokens[a][b] << " " << char(179);
+				output << " " << c.TicTacToeGames[v-1][1].board.tokens[a][b] << " " << char(179);
+				//output << " " << c.tokens[a][b] << " " << char(179);
 			}
 
 			// Right
@@ -208,7 +230,8 @@ ostream  &operator<<(ostream &output, UltimateBoard const &c)
 				if (b == 0) {
 					output << " " << char(179);
 				}
-				output << " " << c.tokens[a][b] << " " << char(179);
+				output << " " << c.TicTacToeGames[v-1][2].board.tokens[a][b] << " " << char(179);
+				//output << " " << c.tokens[a][b] << " " << char(179);
 			}
 
 			output << '\n';

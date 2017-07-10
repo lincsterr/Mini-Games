@@ -5,7 +5,28 @@
 UltimateGame::UltimateGame()
 	:board(3, 3, 3), Game()
 {
+	//initializeGame();
 }
+
+//void UltimateGame::initializeGame()
+//{
+//	TicTacToeGames.resize(3);
+//	for (size_t i = 0; i < 3; i++)
+//	{
+//		TicTacToeGames[i].resize(3);
+//	} // end for
+//}
+//
+//void UltimateGame::clearGame()
+//{
+//	for (size_t i = 0; i < 3; i++)
+//	{
+//		TicTacToeGames[i].resize(0);
+//	} // end for
+//	TicTacToeGames.resize(0);
+//	initializeGame();
+//}
+
 
 void UltimateGame::play()
 {
@@ -13,6 +34,7 @@ void UltimateGame::play()
 	char temp = 'y';
 	while (temp == 'y') {
 		board.clearBoard();
+		//clearGame();
 		players[0].resetNumTurns();
 		players[1].resetNumTurns();
 		clearConsole();
@@ -72,12 +94,36 @@ bool UltimateGame::evaluate(int playerNum)
 
 void UltimateGame::input(int playerNumber)
 {
+	int boardColumnNumber;
+	int boardRowNumber;
 	int columnNumber;
 	int rowNumber;
-	cout << players[playerNumber - 1].getName() << " it is your turn! Please select a location - \"x y\": ";
+	cout << players[playerNumber - 1].getName() << " it is your turn! Please select a board - \"x y\": ";
+	cin >> boardColumnNumber;
+	cin >> boardRowNumber;
+	//while (cin.fail() || (boardColumnNumber < 1) || (boardColumnNumber > 3) || (boardRowNumber < 1) || (boardRowNumber > 3) || !board.addToken(playerNumber, boardRowNumber - 1, boardColumnNumber - 1)) {
+	while (cin.fail() || (boardColumnNumber < 1) || (boardColumnNumber > 3) || (boardRowNumber < 1) || (boardRowNumber > 3) ) {
+		if (!cin.fail()) {
+			if ((boardColumnNumber < 1) || (boardColumnNumber > 3) || (boardRowNumber < 1) || (boardRowNumber > 3)) {
+				cout << "\nIncorrect input, please try again (1-3): ";
+			}
+			else {
+				cout << "\nBoard finished, please select an available board: ";
+			}
+		}
+		else {
+			cout << "\nIncorrect input, please try again (1-3): ";
+		}
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> boardColumnNumber;
+		cin >> boardRowNumber;
+	}
+	
+	cout << players[playerNumber - 1].getName() << ", please select a slot for board \"" << boardColumnNumber << " " << boardRowNumber << "\" - \"x y\": ";
 	cin >> columnNumber;
 	cin >> rowNumber;
-	while (cin.fail() || (columnNumber < 1) || (columnNumber > 3) || (rowNumber < 1) || (rowNumber > 3) || !board.addToken(playerNumber, rowNumber - 1, columnNumber - 1)) {
+	while (cin.fail() || (columnNumber < 1) || (columnNumber > 3) || (rowNumber < 1) || (rowNumber > 3) || !board.TicTacToeGames[boardRowNumber-1][boardColumnNumber-1].board.addToken(playerNumber, rowNumber - 1, columnNumber - 1)) {
 		if (!cin.fail()) {
 			if ((columnNumber < 1) || (columnNumber > 3) || (rowNumber < 1) || (rowNumber > 3)) {
 				cout << "\nIncorrect input, please try again (1-3): ";

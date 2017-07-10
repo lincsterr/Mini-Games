@@ -21,11 +21,11 @@ public:
 	bool checkDiagonalRtoL(int);
 	bool iterateDiagonalRtoL(int, int, int);
 	virtual ~Board();
-
+	vector <vector <Token> > tokens;
 protected: 
 	int num_rows = 1;
 	int num_cols = 1;
 	int numToWin;
-	vector <vector <Token> > tokens;
+	//vector <vector <Token> > tokens;
 };
 

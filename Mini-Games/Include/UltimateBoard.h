@@ -1,5 +1,6 @@
 #pragma once
 #include "Board.h"
+#include "TicTacToeGame.h"
 #include "Token.h"
 #include "Player.h"
 #include <algorithm>
@@ -15,6 +16,11 @@ public:
 	UltimateBoard(int, int, int);
 	~UltimateBoard();
 
+	void initializeGame();
+	void clearGame();
+
 	bool addToken(int, int, int);
+//private:
+	vector <vector <TicTacToeGame> > TicTacToeGames;
 };
 

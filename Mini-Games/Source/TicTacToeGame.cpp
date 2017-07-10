@@ -2,8 +2,13 @@
 
 
 TicTacToeGame::TicTacToeGame()
-	:board(3, 3, 3), Game()
+	:board(), Game()
 {
+}
+
+TicTacToeGame::TicTacToeGame(const TicTacToeGame&obj)
+{
+	this->board = obj.board;
 }
 
 void TicTacToeGame::play()
@@ -164,5 +169,5 @@ void TicTacToeGame::initialize()
 
 TicTacToeGame::~TicTacToeGame()
 {
-	clearConsole();
+	//clearConsole();
 }
